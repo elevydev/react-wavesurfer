@@ -429,7 +429,10 @@ Wavesurfer.propTypes = {
     minPxPerSec: positiveIntegerProptype,
     normalize: PropTypes.bool,
     pixelRatio: PropTypes.number,
-    progressColor: PropTypes.string,
+    progressColor: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(window.CanvasGradient)
+    ]),
     scrollParent: PropTypes.bool,
     skipLength: PropTypes.number,
     waveColor: PropTypes.oneOfType([
